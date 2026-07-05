@@ -1,7 +1,7 @@
 ---
 name: Pancras Gomez
 role: Client Director
-photo: https://medeon.ai/wp-content/uploads/2026/02/Pancras-Photos-Medeon-150x150.png
+photo: /images/Pancras-Photos-Medeon-150x150.png
 linkedin: https://www.linkedin.com/in/pancrasgomez/
 order: 4
 ---

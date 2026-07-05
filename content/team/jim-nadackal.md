@@ -1,7 +1,7 @@
 ---
 name: Jim Nadackal
 role: MD – Consulting & Solutions
-photo: https://medeon.ai/wp-content/uploads/2026/02/JHA_7726-150x150.jpg
+photo: /images/JHA_7726-150x150.jpg
 linkedin: https://www.linkedin.com/in/jc-nadackal/
 order: 3
 ---

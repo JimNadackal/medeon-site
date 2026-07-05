@@ -1,7 +1,7 @@
 ---
 name: Avinash Vastrad
 role: CEO
-photo: https://medeon.ai/wp-content/uploads/2025/09/avinash.png
+photo: /images/avinash.png
 linkedin: https://www.linkedin.com/in/avinashvastrad/
 order: 1
 ---

@@ -5,7 +5,7 @@
     "subtitle": "We help enterprises simplify workflows, boost resilience, and deliver measurable outcomes on ServiceNow.",
     "cta_label": "Book your consultation",
     "cta_link": "/contact-us",
-    "image": "https://medeon.ai/wp-content/uploads/2025/09/1-5.jpg"
+    "image": "/images/1-5.jpg"
   },
   "about": {
     "eyebrow": "About us",
@@ -26,17 +26,17 @@
       {
         "title": "Remediate and Plan",
         "text": "Fix broken implementations, resolve performance issues, and design scalable architectures with business-aligned roadmaps.",
-        "image": "https://medeon.ai/wp-content/uploads/elementor/thumbs/Remediate-and-Plan-rbn80gz8ygio4jn5en8s7w39kqzfwcg94esp6z2r7c.jpg"
+        "image": "/images/Remediate-and-Plan-rbn80gz8ygio4jn5en8s7w39kqzfwcg94esp6z2r7c.jpg"
       },
       {
         "title": "Solve",
         "text": "Transform processes, redesign workflows, and deploy use cases that directly improve outcomes across IT, customer, and employee functions.",
-        "image": "https://medeon.ai/wp-content/uploads/elementor/thumbs/Solve-rbn817aq9tip5mkx4ymc5pg67jdpvvcqk12ampzqd4.jpg"
+        "image": "/images/Solve-rbn817aq9tip5mkx4ymc5pg67jdpvvcqk12ampzqd4.jpg"
       },
       {
         "title": "Maintain",
         "text": "Ensure resilience and continuous value with managed services, enhancements, and remote administration.",
-        "image": "https://medeon.ai/wp-content/uploads/elementor/thumbs/Maintain-rbn81mc5b63abdz2p54d9lnjppblb10fy3i2b5dflk.jpg"
+        "image": "/images/Maintain-rbn81mc5b63abdz2p54d9lnjppblb10fy3i2b5dflk.jpg"
       }
     ],
     "footnote": "We deliver across the full ServiceNow suite — ITSM, ITOM, ITAM, CSM, HRSD, GRC with Agentic AI — supporting industries such as BFSI, Telecom, Manufacturing, Retail, and CPG.",

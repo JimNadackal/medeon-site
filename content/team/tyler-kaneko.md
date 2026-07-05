@@ -1,7 +1,7 @@
 ---
 name: Tyler Kaneko
 role: Principal Platform Architect
-photo: https://medeon.ai/wp-content/uploads/2026/07/TylerKaneko-150x150.png
+photo: /images/TylerKaneko-150x150.png
 linkedin: https://www.linkedin.com/in/tyler-kaneko-86489a4a
 order: 5
 ---

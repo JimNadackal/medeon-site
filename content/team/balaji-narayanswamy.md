@@ -1,7 +1,7 @@
 ---
 name: Balaji Narayanswamy
 role: COO
-photo: https://medeon.ai/wp-content/uploads/2025/09/Balaji.png
+photo: /images/Balaji.png
 linkedin: https://www.linkedin.com/in/balajirn/
 order: 2
 ---
