@@ -1,0 +1,17 @@
+{
+  "site_name": "Medeon",
+  "tagline": "ServiceNow AI consulting and solutions",
+  "logo": "https://medeon.ai/wp-content/uploads/2025/09/medeonLogo_Svg.svg",
+  "logo_white": "https://medeon.ai/wp-content/uploads/2025/09/Medeon-Logo-White.svg",
+  "nav": [
+    { "label": "Home", "href": "/" },
+    { "label": "Services", "href": "/services" },
+    { "label": "Our Team", "href": "/our-team" },
+    { "label": "Get Started", "href": "/contact-us" }
+  ],
+  "company_name": "Medeon Solutions Pte. Ltd.",
+  "address": "160 Robinson Road, #14-04 Singapore Business Federation Centre, Singapore 068914",
+  "email": "jane@medeon.ai",
+  "linkedin": "https://www.linkedin.com/company/medeonai",
+  "copyright": "© 2026 Medeon Solutions. All Rights Reserved."
+}

@@ -1,0 +1,36 @@
+---
+import Base from '../layouts/Base.astro';
+import contact from '../../content/contact.json';
+---
+<Base title="Contact Us" description={contact.subtitle}>
+
+  <section class="hero" style="padding-bottom:40px;">
+    <div class="container">
+      <p class="eyebrow">{contact.eyebrow}</p>
+      <h1>{contact.title}</h1>
+      <p class="lead" style="margin-top:20px;">{contact.subtitle}</p>
+    </div>
+  </section>
+
+  <section class="section tint" style="padding-top:56px;">
+    <div class="container">
+      <div class="offices">
+        {contact.offices.map((o) => (
+          <div class="office reveal">
+            <h3>{o.city}</h3>
+            <p>{o.address}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="contact-email reveal">
+        <div>
+          <p style="font-family:var(--font-mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:#56c9a8;margin-bottom:8px;">Email us</p>
+          <a class="email" href={`mailto:${contact.email}`}>{contact.email}</a>
+        </div>
+        <p style="max-width:32ch;">{contact.email_note}</p>
+      </div>
+    </div>
+  </section>
+
+</Base>

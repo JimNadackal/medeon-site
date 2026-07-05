@@ -1,0 +1,108 @@
+{
+  "intro": {
+    "eyebrow": "What we do best",
+    "title": "Services",
+    "text": "We help enterprises maximize ServiceNow with quick time to value, optimized operations, and measurable business results. Our comprehensive services cover the entire ServiceNow lifecycle, enhanced with AI-enabled solutions ensuring you get the most out of your investment.",
+    "text2": "We bring together strategic consulting, change enablement, and deep ServiceNow expertise to support your business across the entire platform lifecycle. From stabilizing underperforming environments to solving high-impact challenges and driving continuous improvement, we meet you where you are, and help you move forward with confidence."
+  },
+  "consulting": {
+    "eyebrow": "Strategic foundation",
+    "title": "Consulting and Change",
+    "text": "We go beyond implementation, offering strategic consulting and robust change management to ensure your ServiceNow investment truly transforms your business. Our approach includes:",
+    "bullets": [
+      {
+        "title": "Workflow assessments and ROI-focused roadmaps",
+        "text": "We analyze your current processes, identify opportunities for improvement, and develop clear roadmaps that prioritize initiatives with the highest return on investment."
+      },
+      {
+        "title": "Cross-functional design aligned to business priorities",
+        "text": "We design solutions that break down silos and foster collaboration across departments, ensuring that every workflow supports your overarching business objectives."
+      },
+      {
+        "title": "Change management and training to ensure adoption sticks",
+        "text": "Successful technology adoption requires more than just implementation. We provide comprehensive change management strategies and tailored training programs to empower your employees and ensure lasting adoption of ServiceNow."
+      }
+    ],
+    "image": "https://medeon.ai/wp-content/uploads/2025/09/consultingAndChange.png"
+  },
+  "core": {
+    "title": "Core Services",
+    "stages": [
+      {
+        "title": "Remediate and Plan",
+        "bullets": [
+          "Audit existing implementations to identify gaps and areas for improvement.",
+          "Redesign and stabilize workflows for optimal performance and scalability.",
+          "Build ROI-focused roadmaps and architectures aligned with your business strategy, ensuring every step contributes to your bottom line."
+        ]
+      },
+      {
+        "title": "Solve",
+        "bullets": [
+          "Redesign processes for enhanced efficiency and speed, eliminating bottlenecks and streamlining operations.",
+          "Optimize workflows with automation and AI-enabled insights, leveraging cutting-edge technology to drive smarter decisions.",
+          "Deploy use cases that deliver tangible value, addressing your specific challenges and opportunities.",
+          "Implement solutions across IT, customer, and enterprise workflows, creating a unified and highly functional ecosystem."
+        ]
+      },
+      {
+        "title": "Maintain",
+        "bullets": [
+          "Provide SLA-backed managed services and retained expertise, ensuring continuous support and operational excellence.",
+          "Deliver continuous enhancements and remote administration, keeping your ServiceNow environment up-to-date and performing at its peak.",
+          "Implement proactive monitoring to predict and prevent issues, minimizing downtime and ensuring business continuity."
+        ]
+      }
+    ]
+  },
+  "products": {
+    "title": "Product-specific expertise",
+    "text": "Our ServiceNow expertise spans the full platform, enriched with AI-enabled automation and predictive insights. By combining domain knowledge with intelligent agents, we help enterprises move from reactive fixes to proactive operations. Whether it's IT, customer, or governance workflows, our solutions are designed to scale securely across BFSI, Telecom, Manufacturing, Retail, and CPG.",
+    "items": [
+      {
+        "title": "Artificial Intelligence (AI)",
+        "text": "AI Agents act autonomously, resolving issues, making decisions, and interacting with their environments, while always under your control. GenAI capabilities support human interactions by role. Instantly create new content from learning patterns in existing data to get help, resolve issues, and answer questions."
+      },
+      {
+        "title": "IT Service Management (ITSM)",
+        "text": "Modernize IT operations, improve Mean Time to Resolution (MTTR), and raise first-contact resolution rates. Our ITSM solutions streamline incident, problem, and change management, empowering your IT teams to deliver exceptional service."
+      },
+      {
+        "title": "IT Operations Management (ITOM)",
+        "text": "Predict incidents, map services, and optimize cloud and infrastructure costs. With ITOM, you gain comprehensive visibility and control over your IT infrastructure, enabling proactive issue resolution and efficient resource allocation."
+      },
+      {
+        "title": "IT Asset Management (ITAM)",
+        "text": "Gain full control of licenses and devices, ensure audit compliance, and reduce spend. Our ITAM solutions help you track, manage, and optimize your software and hardware assets throughout their lifecycle, ensuring compliance and maximizing value."
+      },
+      {
+        "title": "Customer Service Management (CSM)",
+        "text": "Resolve cases faster, deliver omnichannel support, and boost loyalty. AI-powered case deflection, chatbots, and predictive analytics improve MTTR and first-contact resolution, driving customer satisfaction."
+      },
+      {
+        "title": "HR Service Delivery (HRSD)",
+        "text": "Improve productivity by making it easy for employees to get the help and guidance they need, all in one place. Reduce costs with AI-driven self-service and streamlined case resolution."
+      },
+      {
+        "title": "Governance, Risk, and Compliance (GRC)",
+        "text": "Automate compliance, strengthen control frameworks, and improve resilience. Our GRC solutions help you navigate complex regulatory landscapes, mitigate risks, and maintain a strong compliance posture."
+      }
+    ]
+  },
+  "outcomes": {
+    "title": "Outcomes we deliver",
+    "text": "We combine the strategic thinking of a consultancy with the execution power of a delivery partner. That means you get more than a team that can configure ServiceNow — you get a partner who can help you make the right decisions, drive adoption, and continuously realize value.",
+    "bullets": [
+      "Higher adoption rates through effective training, change management, and AI-assisted workflows.",
+      "Reliable platforms with reduced downtime using predictive monitoring and automated alerts.",
+      "Measurable ROI by aligning ServiceNow implementations with business KPIs.",
+      "Smarter compliance with embedded governance and AI-driven audit readiness.",
+      "Enhanced experiences for customers and employees through intelligent workflows and automation."
+    ]
+  },
+  "cta": {
+    "title": "Ready to accelerate value from ServiceNow?",
+    "button_label": "Book your consultation",
+    "button_link": "/contact-us"
+  }
+}

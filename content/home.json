@@ -1,0 +1,85 @@
+{
+  "hero": {
+    "eyebrow": "ServiceNow AI Consulting & Solutions",
+    "title": "Leading your AI journey from strategy to success with ServiceNow AI platform",
+    "subtitle": "We help enterprises simplify workflows, boost resilience, and deliver measurable outcomes on ServiceNow.",
+    "cta_label": "Book your consultation",
+    "cta_link": "/contact-us",
+    "image": "https://medeon.ai/wp-content/uploads/2025/09/1-5.jpg"
+  },
+  "about": {
+    "eyebrow": "About us",
+    "title": "Aligning ServiceNow AI platform with your success.",
+    "points": [
+      "Medeon, an Apar Technologies group company, is a specialized ServiceNow AI consulting and solutions company with deep expertise in building, scaling, and optimizing enterprise workflows worldwide.",
+      "Our team brings together former ServiceNow leaders and seasoned industry experts who understand how to maximize the platform's value. With this experience, we design solutions that streamline operations, improve performance, and reduce costs, while ensuring lasting adoption across the enterprise.",
+      "At Medeon, we don't just implement ServiceNow; we transform the way organizations work. By embedding AI-enabled intelligence into workflows, we help clients unlock efficiency, agility, and measurable business outcomes."
+    ],
+    "cta_label": "Get in touch",
+    "cta_link": "/contact-us"
+  },
+  "services": {
+    "eyebrow": "Medeon's services snapshot",
+    "title": "Maximize your ServiceNow AI platform investment with focused consulting",
+    "subtitle": "End-to-end consulting across your ServiceNow journey, ensuring measurable ROI at every stage.",
+    "cards": [
+      {
+        "title": "Remediate and Plan",
+        "text": "Fix broken implementations, resolve performance issues, and design scalable architectures with business-aligned roadmaps.",
+        "image": "https://medeon.ai/wp-content/uploads/elementor/thumbs/Remediate-and-Plan-rbn80gz8ygio4jn5en8s7w39kqzfwcg94esp6z2r7c.jpg"
+      },
+      {
+        "title": "Solve",
+        "text": "Transform processes, redesign workflows, and deploy use cases that directly improve outcomes across IT, customer, and employee functions.",
+        "image": "https://medeon.ai/wp-content/uploads/elementor/thumbs/Solve-rbn817aq9tip5mkx4ymc5pg67jdpvvcqk12ampzqd4.jpg"
+      },
+      {
+        "title": "Maintain",
+        "text": "Ensure resilience and continuous value with managed services, enhancements, and remote administration.",
+        "image": "https://medeon.ai/wp-content/uploads/elementor/thumbs/Maintain-rbn81mc5b63abdz2p54d9lnjppblb10fy3i2b5dflk.jpg"
+      }
+    ],
+    "footnote": "We deliver across the full ServiceNow suite — ITSM, ITOM, ITAM, CSM, HRSD, GRC with Agentic AI — supporting industries such as BFSI, Telecom, Manufacturing, Retail, and CPG.",
+    "cta_label": "Get in touch",
+    "cta_link": "/contact-us"
+  },
+  "why": {
+    "eyebrow": "Why choose us",
+    "title": "Delivering value beyond implementation",
+    "items": [
+      {
+        "title": "Proven expertise",
+        "text": "Former ServiceNow architects and senior consultants with 100+ years of combined transformation experience."
+      },
+      {
+        "title": "Innovation-driven",
+        "text": "Embedding AI-enabled solutions and automation to future-proof workflows and maximize value."
+      },
+      {
+        "title": "Industry depth",
+        "text": "Track record across BFSI, Retail, Manufacturing, CPG, and Technology."
+      },
+      {
+        "title": "Platform alignment",
+        "text": "Strong collaboration with ServiceNow across APJ and MEA."
+      },
+      {
+        "title": "Efficient delivery",
+        "text": "Offshore capability for scale, savings, and 24x7 support."
+      },
+      {
+        "title": "Business outcomes, not just go-lives",
+        "text": "We drive faster adoption, embed compliance, and operationalize insights so ServiceNow delivers measurable ROI in your environment."
+      },
+      {
+        "title": "Agile and responsive",
+        "text": "As a specialized partner, we adapt quickly, working closely with you to ensure tailored solutions and faster results."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to accelerate value from ServiceNow?",
+    "button_label": "Book your consultation",
+    "button_link": "/contact-us"
+  }
+}

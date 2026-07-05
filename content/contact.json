@@ -1,0 +1,15 @@
+{
+  "eyebrow": "Get started",
+  "title": "Contact Us",
+  "subtitle": "Got a ServiceNow challenge? Medeon is specialized to help.",
+  "email": "jane@medeon.ai",
+  "email_note": "To request more information, contact us.",
+  "offices": [
+    { "city": "Singapore", "address": "160 Robinson Road, #14-04 Singapore Business Federation Centre, Singapore 068914" },
+    { "city": "Kuala Lumpur", "address": "Unit 41-02, Q Sentral 2A, Jalan Stesen Sentral 2, KL Sentral, 50470, Kuala Lumpur" },
+    { "city": "Bangkok", "address": "591 United Business Center II Building, Unit 2105-6(B) 21st floor, Sukhumvit Road, Khlong Tan Nuea, Wattana, Bangkok 10110" },
+    { "city": "Bengaluru", "address": "#22, 5th Floor, SJR Cyber, Lasker Hosur Road, Adugodi, Bengaluru, Karnataka 560030" },
+    { "city": "Dubai", "address": "Office 210-211, Building 15, Dubai Internet City, Dubai – UAE" },
+    { "city": "Princeton", "address": "103 Carnegie Center Suite 300, Princeton, NJ 08540" }
+  ]
+}

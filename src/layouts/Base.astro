@@ -1,0 +1,81 @@
+---
+import settings from '../../content/settings.json';
+import '../styles/global.css';
+
+const { title, description } = Astro.props;
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title ? `${title} | ${settings.site_name}` : `${settings.site_name} — ${settings.tagline}`}</title>
+  <meta name="description" content={description || settings.tagline} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;650;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="/" aria-label={settings.site_name}>
+        <img src={settings.logo} alt={`${settings.site_name} logo`} />
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="nav">MENU</button>
+      <nav class="nav" id="nav">
+        {settings.nav.map((item, i) => (
+          i === settings.nav.length - 1
+            ? <a class="btn" href={item.href}>{item.label}</a>
+            : <a href={item.href} aria-current={path === item.href ? 'page' : undefined}>{item.label}</a>
+        ))}
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <img class="flogo" src={settings.logo_white} alt={`${settings.site_name} logo`} />
+          <h4>{settings.company_name}</h4>
+          <p>{settings.address}</p>
+          <p style="margin-top:10px;"><a href={`mailto:${settings.email}`}>{settings.email}</a></p>
+        </div>
+        <div>
+          <h4>Quick links</h4>
+          <ul class="flinks">
+            {settings.nav.map((item) => (
+              <li><a href={item.href}>{item.label}</a></li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <div class="legal">
+        <span>{settings.copyright}</span>
+        <a href={settings.linkedin} rel="noopener" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.getElementById('nav');
+    toggle?.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  </script>
+</body>
+</html>

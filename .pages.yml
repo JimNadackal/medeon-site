@@ -1,0 +1,205 @@
+media:
+  input: public/images
+  output: /images
+
+content:
+  - name: home
+    label: "Home Page"
+    type: file
+    path: content/home.json
+    format: json
+    fields:
+      - name: hero
+        label: "Top Banner (Hero)"
+        type: object
+        fields:
+          - { name: eyebrow, label: "Small label above title", type: string }
+          - { name: title, label: "Main headline", type: string }
+          - { name: subtitle, label: "Subtitle", type: text }
+          - { name: cta_label, label: "Button text", type: string }
+          - { name: cta_link, label: "Button link", type: string }
+          - { name: image, label: "Hero image", type: image }
+      - name: about
+        label: "About Section"
+        type: object
+        fields:
+          - { name: eyebrow, label: "Small label", type: string }
+          - { name: title, label: "Section title", type: string }
+          - { name: points, label: "Paragraphs", type: text, list: true }
+          - { name: cta_label, label: "Button text", type: string }
+          - { name: cta_link, label: "Button link", type: string }
+      - name: services
+        label: "Services Snapshot"
+        type: object
+        fields:
+          - { name: eyebrow, label: "Small label", type: string }
+          - { name: title, label: "Section title", type: string }
+          - { name: subtitle, label: "Subtitle", type: text }
+          - name: cards
+            label: "Service cards"
+            type: object
+            list: true
+            fields:
+              - { name: title, label: "Card title", type: string }
+              - { name: text, label: "Card text", type: text }
+              - { name: image, label: "Card image", type: image }
+          - { name: footnote, label: "Footnote", type: text }
+          - { name: cta_label, label: "Button text", type: string }
+          - { name: cta_link, label: "Button link", type: string }
+      - name: why
+        label: "Why Choose Us"
+        type: object
+        fields:
+          - { name: eyebrow, label: "Small label", type: string }
+          - { name: title, label: "Section title", type: string }
+          - name: items
+            label: "Reasons"
+            type: object
+            list: true
+            fields:
+              - { name: title, label: "Title", type: string }
+              - { name: text, label: "Text", type: text }
+      - name: cta
+        label: "Bottom Call-to-Action"
+        type: object
+        fields:
+          - { name: title, label: "Title", type: string }
+          - { name: button_label, label: "Button text", type: string }
+          - { name: button_link, label: "Button link", type: string }
+
+  - name: services_page
+    label: "Services Page"
+    type: file
+    path: content/services.json
+    format: json
+    fields:
+      - name: intro
+        label: "Page Intro"
+        type: object
+        fields:
+          - { name: eyebrow, label: "Small label", type: string }
+          - { name: title, label: "Page title", type: string }
+          - { name: text, label: "Intro paragraph 1", type: text }
+          - { name: text2, label: "Intro paragraph 2", type: text }
+      - name: consulting
+        label: "Consulting and Change"
+        type: object
+        fields:
+          - { name: eyebrow, label: "Small label", type: string }
+          - { name: title, label: "Title", type: string }
+          - { name: text, label: "Intro text", type: text }
+          - name: bullets
+            label: "Bullet points"
+            type: object
+            list: true
+            fields:
+              - { name: title, label: "Bold lead-in", type: string }
+              - { name: text, label: "Text", type: text }
+          - { name: image, label: "Image", type: image }
+      - name: core
+        label: "Core Services (3 stages)"
+        type: object
+        fields:
+          - { name: title, label: "Section title", type: string }
+          - name: stages
+            label: "Stages"
+            type: object
+            list: true
+            fields:
+              - { name: title, label: "Stage name", type: string }
+              - { name: bullets, label: "Bullet points", type: text, list: true }
+      - name: products
+        label: "Product Expertise"
+        type: object
+        fields:
+          - { name: title, label: "Section title", type: string }
+          - { name: text, label: "Intro text", type: text }
+          - name: items
+            label: "Products"
+            type: object
+            list: true
+            fields:
+              - { name: title, label: "Product name", type: string }
+              - { name: text, label: "Description", type: text }
+      - name: outcomes
+        label: "Outcomes"
+        type: object
+        fields:
+          - { name: title, label: "Section title", type: string }
+          - { name: text, label: "Intro text", type: text }
+          - { name: bullets, label: "Outcome bullets", type: text, list: true }
+      - name: cta
+        label: "Bottom Call-to-Action"
+        type: object
+        fields:
+          - { name: title, label: "Title", type: string }
+          - { name: button_label, label: "Button text", type: string }
+          - { name: button_link, label: "Button link", type: string }
+
+  - name: team
+    label: "Team Members"
+    type: collection
+    path: content/team
+    format: yaml-frontmatter
+    view:
+      fields: [name, role, order]
+      sort: [order]
+    fields:
+      - { name: name, label: "Full name", type: string }
+      - { name: role, label: "Job title", type: string }
+      - { name: photo, label: "Photo", type: image }
+      - { name: linkedin, label: "LinkedIn URL", type: string }
+      - { name: order, label: "Display order (1 = first)", type: number }
+      - { name: body, label: "Biography", type: rich-text }
+
+  - name: team_page
+    label: "Team Page Intro"
+    type: file
+    path: content/team-page.json
+    format: json
+    fields:
+      - { name: eyebrow, label: "Small label", type: string }
+      - { name: title, label: "Page title", type: string }
+      - { name: intro, label: "Intro paragraph", type: text }
+
+  - name: contact
+    label: "Contact Page"
+    type: file
+    path: content/contact.json
+    format: json
+    fields:
+      - { name: eyebrow, label: "Small label", type: string }
+      - { name: title, label: "Page title", type: string }
+      - { name: subtitle, label: "Subtitle", type: text }
+      - { name: email, label: "Contact email", type: string }
+      - { name: email_note, label: "Note next to email", type: text }
+      - name: offices
+        label: "Offices"
+        type: object
+        list: true
+        fields:
+          - { name: city, label: "City", type: string }
+          - { name: address, label: "Address", type: text }
+
+  - name: settings
+    label: "Site Settings"
+    type: file
+    path: content/settings.json
+    format: json
+    fields:
+      - { name: site_name, label: "Site name", type: string }
+      - { name: tagline, label: "Tagline (used for SEO)", type: string }
+      - { name: logo, label: "Logo (header)", type: image }
+      - { name: logo_white, label: "Logo (white, footer)", type: image }
+      - name: nav
+        label: "Navigation menu"
+        type: object
+        list: true
+        fields:
+          - { name: label, label: "Menu text", type: string }
+          - { name: href, label: "Link", type: string }
+      - { name: company_name, label: "Company legal name", type: string }
+      - { name: address, label: "HQ address", type: text }
+      - { name: email, label: "Contact email", type: string }
+      - { name: linkedin, label: "LinkedIn URL", type: string }
+      - { name: copyright, label: "Copyright line", type: string }
