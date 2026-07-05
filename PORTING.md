@@ -1,33 +1,38 @@
 # PORTING.md — Moving the new site to medeon.ai
 
 **Context for whoever does this** (a developer, Claude Code, or future Jim):
-The new site is an Astro static site. Content is edited via Pages CMS (app.pagescms.org), stored in a GitHub repo, and auto-deployed to Cloudflare Pages at `medeon-site.pages.dev`. The old site is WordPress on an OVH VPS (IP 51.79.223.113). The goal is to make **https://medeon.ai** serve the new site.
+The new site is an Astro static site. Content is edited via Pages CMS (app.pagescms.org), stored in the GitHub repo `JimNadackal/medeon-site`, and auto-deployed by GitHub Actions to GitHub Pages at `https://jimnadackal.github.io/medeon-site/`. The old site is WordPress on an OVH VPS (IP 51.79.223.113). The goal is to make **https://medeon.ai** serve the new site.
 
 There are two ways to do this. **Option A is strongly recommended.**
 
 ---
 
-## Option A (recommended): Point the domain at Cloudflare Pages, retire the VPS
+## Option A (recommended): Point the domain at GitHub Pages, retire the VPS
 
 Keep the free hosting forever. The VPS becomes unnecessary. Zero servers to maintain, zero WordPress updates, zero security patching. This is the modern default for a static marketing site.
 
 ### Prerequisites
 - Login for the **domain registrar** (wherever medeon.ai was purchased — check the OVH account first; it may be registered there)
-- Admin access to the Cloudflare account from Step 2 of README.md
+- Admin access to the `JimNadackal/medeon-site` GitHub repo
 
 ### Steps (~30 min + DNS wait time)
-1. **Get final content in.** Make sure images no longer reference `medeon.ai/wp-content/...` URLs (see "Image migration" below). This MUST happen before WordPress goes offline.
-2. **Add the custom domain in Cloudflare Pages:**
-   - Cloudflare dashboard → your Pages project → **Custom domains → Set up a custom domain** → enter `medeon.ai`
-   - Cloudflare will instruct you to either (a) move DNS to Cloudflare nameservers (cleanest) or (b) add a CNAME record
-3. **At the registrar,** change the nameservers to the two Cloudflare nameservers shown (e.g. `xxx.ns.cloudflare.com`). 
-4. **Re-create the other DNS records in Cloudflare before/immediately after the switch.** Critical: **MX records for email** (jane@medeon.ai etc.). Copy every existing DNS record from the current DNS provider into Cloudflare first, THEN switch nameservers. If MX records are missed, company email stops working.
-5. Also add `www.medeon.ai` as a custom domain in Pages (it will redirect to the apex).
-6. Wait for DNS propagation (minutes to 24h). Verify: `https://medeon.ai` shows the new site with a valid HTTPS certificate (Cloudflare issues it automatically).
+1. **Get final content in.** Make sure images no longer reference `medeon.ai/wp-content/...` URLs (see "Image migration" below). This MUST happen before WordPress goes offline. *(Done 2026-07-06 — grep is clean.)*
+2. **Add these DNS records at the current DNS provider** (leave all other records, especially **MX records for email**, exactly as they are — GitHub Pages only needs the records below, no nameserver change):
+   - Four **A records** for the apex `medeon.ai` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+   - (Optional, for IPv6) four **AAAA records** → `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`
+   - One **CNAME record** for `www` → `jimnadackal.github.io`
+   - Delete/replace the old A record pointing at the VPS (`51.79.223.113`) — this is the actual switch moment
+3. **Add the custom domain in the repo:** GitHub → repo **Settings → Pages → Custom domain** → enter `medeon.ai` → Save. Or via CLI:
+   ```
+   gh api -X PUT repos/JimNadackal/medeon-site/pages -f cname=medeon.ai
+   ```
+4. **Update `astro.config.mjs`:** set `site: 'https://medeon.ai'` and remove the `base: '/medeon-site'` line (the site will now live at the domain root). Commit — the site redeploys automatically.
+5. Wait for DNS propagation (minutes to 24h), then in **Settings → Pages** tick **Enforce HTTPS** (GitHub issues the certificate automatically once DNS resolves; the checkbox may take up to a day to become available).
+6. Verify: `https://medeon.ai` and `https://www.medeon.ai` show the new site with a valid HTTPS certificate.
 7. **Keep the OVH VPS running for 2 weeks** as a fallback, then take a final backup of WordPress (files + database) and cancel the VPS.
 
 ### Rollback
-Point the nameservers back to the old ones. The WordPress site is untouched until the VPS is cancelled.
+Point the apex A record back to `51.79.223.113` and remove the custom domain from repo Settings → Pages. The WordPress site is untouched until the VPS is cancelled.
 
 ---
 
