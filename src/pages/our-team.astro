@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import page from '../../content/team-page.json';
+import { withBase } from '../lib/url.js';
 
 const modules = import.meta.glob('../../content/team/*.md', { eager: true });
 const members = Object.values(modules)
@@ -23,7 +24,7 @@ const members = Object.values(modules)
         {members.map((m) => (
           <article class="member reveal">
             <div class="member-head">
-              <img src={m.photo} alt={m.name} loading="lazy" />
+              <img src={withBase(m.photo)} alt={m.name} loading="lazy" />
               <div>
                 <h3>{m.name}</h3>
                 <span class="role">{m.role}</span>

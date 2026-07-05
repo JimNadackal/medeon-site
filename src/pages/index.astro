@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import home from '../../content/home.json';
+import { withBase } from '../lib/url.js';
 ---
 <Base title="Home" description={home.hero.subtitle}>
 
@@ -10,10 +11,10 @@ import home from '../../content/home.json';
         <p class="eyebrow">{home.hero.eyebrow}</p>
         <h1>{home.hero.title}</h1>
         <p class="lead">{home.hero.subtitle}</p>
-        <a class="btn" href={home.hero.cta_link}>{home.hero.cta_label}</a>
+        <a class="btn" href={withBase(home.hero.cta_link)}>{home.hero.cta_label}</a>
       </div>
       <div class="hero-img reveal">
-        <img src={home.hero.image} alt="Enterprise team collaborating" />
+        <img src={withBase(home.hero.image)} alt="Enterprise team collaborating" />
       </div>
     </div>
   </section>
@@ -26,10 +27,10 @@ import home from '../../content/home.json';
         <ul class="points">
           {home.about.points.map((p) => <li>{p}</li>)}
         </ul>
-        <a class="btn ghost" href={home.about.cta_link}>{home.about.cta_label}</a>
+        <a class="btn ghost" href={withBase(home.about.cta_link)}>{home.about.cta_label}</a>
       </div>
       <div class="reveal">
-        <img src={home.hero.image} alt="" loading="lazy" style="border-radius:10px;" />
+        <img src={withBase(home.hero.image)} alt="" loading="lazy" style="border-radius:10px;" />
       </div>
     </div>
   </section>
@@ -42,7 +43,7 @@ import home from '../../content/home.json';
       <div class="cards">
         {home.services.cards.map((card) => (
           <article class="card reveal">
-            <img src={card.image} alt={card.title} loading="lazy" />
+            <img src={withBase(card.image)} alt={card.title} loading="lazy" />
             <div class="card-body">
               <h3>{card.title}</h3>
               <p>{card.text}</p>
@@ -52,7 +53,7 @@ import home from '../../content/home.json';
       </div>
       <p class="footnote">{home.services.footnote}</p>
       <div style="margin-top:36px;">
-        <a class="btn" href={home.services.cta_link}>{home.services.cta_label}</a>
+        <a class="btn" href={withBase(home.services.cta_link)}>{home.services.cta_label}</a>
       </div>
     </div>
   </section>
@@ -75,7 +76,7 @@ import home from '../../content/home.json';
   <section class="section cta-band">
     <div class="container">
       <h2>{home.cta.title}</h2>
-      <a class="btn" href={home.cta.button_link}>{home.cta.button_label}</a>
+      <a class="btn" href={withBase(home.cta.button_link)}>{home.cta.button_label}</a>
     </div>
   </section>
 

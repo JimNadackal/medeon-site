@@ -1,9 +1,11 @@
 ---
 import settings from '../../content/settings.json';
+import { withBase } from '../lib/url.js';
 import '../styles/global.css';
 
 const { title, description } = Astro.props;
 const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isCurrent = (href) => path === (withBase(href).replace(/\/$/, '') || '/');
 ---
 <!doctype html>
 <html lang="en">
@@ -19,15 +21,15 @@ const path = Astro.url.pathname.replace(/\/$/, '') || '/';
 <body>
   <header class="site-header">
     <div class="container">
-      <a class="logo" href="/" aria-label={settings.site_name}>
-        <img src={settings.logo} alt={`${settings.site_name} logo`} />
+      <a class="logo" href={withBase('/')} aria-label={settings.site_name}>
+        <img src={withBase(settings.logo)} alt={`${settings.site_name} logo`} />
       </a>
       <button class="menu-toggle" aria-expanded="false" aria-controls="nav">MENU</button>
       <nav class="nav" id="nav">
         {settings.nav.map((item, i) => (
           i === settings.nav.length - 1
-            ? <a class="btn" href={item.href}>{item.label}</a>
-            : <a href={item.href} aria-current={path === item.href ? 'page' : undefined}>{item.label}</a>
+            ? <a class="btn" href={withBase(item.href)}>{item.label}</a>
+            : <a href={withBase(item.href)} aria-current={isCurrent(item.href) ? 'page' : undefined}>{item.label}</a>
         ))}
       </nav>
     </div>
@@ -41,7 +43,7 @@ const path = Astro.url.pathname.replace(/\/$/, '') || '/';
     <div class="container">
       <div class="footer-grid">
         <div>
-          <img class="flogo" src={settings.logo_white} alt={`${settings.site_name} logo`} />
+          <img class="flogo" src={withBase(settings.logo_white)} alt={`${settings.site_name} logo`} />
           <h4>{settings.company_name}</h4>
           <p>{settings.address}</p>
           <p style="margin-top:10px;"><a href={`mailto:${settings.email}`}>{settings.email}</a></p>
@@ -50,7 +52,7 @@ const path = Astro.url.pathname.replace(/\/$/, '') || '/';
           <h4>Quick links</h4>
           <ul class="flinks">
             {settings.nav.map((item) => (
-              <li><a href={item.href}>{item.label}</a></li>
+              <li><a href={withBase(item.href)}>{item.label}</a></li>
             ))}
           </ul>
         </div>
