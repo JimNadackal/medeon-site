@@ -10,15 +10,15 @@ const members = Object.values(modules)
 ---
 <Base title="Our Team" description={page.intro}>
 
-  <section class="hero" style="padding-bottom:40px;">
+  <section class="hero">
     <div class="container">
       <p class="eyebrow">{page.eyebrow}</p>
       <h1>{page.title}</h1>
-      <p class="lead" style="margin-top:20px;">{page.intro}</p>
+      <p class="lead" style="margin-top:24px;">{page.intro}</p>
     </div>
   </section>
 
-  <section class="section tint" style="padding-top:56px;">
+  <section class="section tint">
     <div class="container">
       <div class="team-grid">
         {members.map((m) => (

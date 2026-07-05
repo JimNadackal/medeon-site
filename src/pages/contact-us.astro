@@ -4,15 +4,15 @@ import contact from '../../content/contact.json';
 ---
 <Base title="Contact Us" description={contact.subtitle}>
 
-  <section class="hero" style="padding-bottom:40px;">
+  <section class="hero">
     <div class="container">
       <p class="eyebrow">{contact.eyebrow}</p>
       <h1>{contact.title}</h1>
-      <p class="lead" style="margin-top:20px;">{contact.subtitle}</p>
+      <p class="lead" style="margin-top:24px;">{contact.subtitle}</p>
     </div>
   </section>
 
-  <section class="section tint" style="padding-top:56px;">
+  <section class="section tint">
     <div class="container">
       <div class="offices">
         {contact.offices.map((o) => (
@@ -25,10 +25,10 @@ import contact from '../../content/contact.json';
 
       <div class="contact-email reveal">
         <div>
-          <p style="font-family:var(--font-mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:#56c9a8;margin-bottom:8px;">Email us</p>
+          <p class="email-label">Email us</p>
           <a class="email" href={`mailto:${contact.email}`}>{contact.email}</a>
         </div>
-        <p style="max-width:32ch;">{contact.email_note}</p>
+        <p>{contact.email_note}</p>
       </div>
     </div>
   </section>

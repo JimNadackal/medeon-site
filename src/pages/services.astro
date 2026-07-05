@@ -5,11 +5,11 @@ import { withBase } from '../lib/url.js';
 ---
 <Base title="Services" description={services.intro.text}>
 
-  <section class="hero" style="padding-bottom:56px;">
+  <section class="hero">
     <div class="container">
       <p class="eyebrow">{services.intro.eyebrow}</p>
       <h1>{services.intro.title}</h1>
-      <p class="lead" style="margin-top:20px;">{services.intro.text}</p>
+      <p class="lead" style="margin-top:24px;">{services.intro.text}</p>
       <p class="lead" style="margin-top:16px;">{services.intro.text2}</p>
     </div>
   </section>
@@ -19,22 +19,24 @@ import { withBase } from '../lib/url.js';
       <div class="reveal">
         <p class="eyebrow">{services.consulting.eyebrow}</p>
         <h2>{services.consulting.title}</h2>
-        <p style="margin-top:16px;color:var(--slate);">{services.consulting.text}</p>
+        <p style="margin-top:18px;color:var(--slate);">{services.consulting.text}</p>
         <ul class="points">
           {services.consulting.bullets.map((b) => (
-            <li><strong style="color:var(--ink);">{b.title}:</strong> {b.text}</li>
+            <li><strong>{b.title}:</strong> {b.text}</li>
           ))}
         </ul>
       </div>
       <div class="reveal">
-        <img src={withBase(services.consulting.image)} alt="Consulting and change" loading="lazy" style="border-radius:10px;" />
+        <img src={withBase(services.consulting.image)} alt="Consulting and change" loading="lazy" style="border-radius:var(--radius);" />
       </div>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <h2>{services.core.title}</h2>
+      <div class="section-head">
+        <h2>{services.core.title}</h2>
+      </div>
       <div class="stages">
         {services.core.stages.map((stage, i) => (
           <div class="stage reveal">
@@ -51,8 +53,10 @@ import { withBase } from '../lib/url.js';
 
   <section class="section tint">
     <div class="container">
-      <h2>{services.products.title}</h2>
-      <p class="lead" style="margin-top:16px;">{services.products.text}</p>
+      <div class="section-head">
+        <h2>{services.products.title}</h2>
+        <p class="lead">{services.products.text}</p>
+      </div>
       <div class="products">
         {services.products.items.map((item) => (
           <div class="product reveal">
@@ -64,20 +68,24 @@ import { withBase } from '../lib/url.js';
     </div>
   </section>
 
-  <section class="section dark on-dark">
+  <section class="section">
     <div class="container">
-      <h2>{services.outcomes.title}</h2>
-      <p class="lead" style="margin-top:16px;">{services.outcomes.text}</p>
-      <ul class="points" style="margin-top:30px;">
-        {services.outcomes.bullets.map((b) => <li style="color:#b9c6cf;">{b}</li>)}
-      </ul>
+      <div class="panel-dark on-dark">
+        <h2>{services.outcomes.title}</h2>
+        <p class="lead" style="margin-top:18px;">{services.outcomes.text}</p>
+        <ul class="points" style="margin-top:30px;">
+          {services.outcomes.bullets.map((b) => <li>{b}</li>)}
+        </ul>
+      </div>
     </div>
   </section>
 
-  <section class="section cta-band">
+  <section class="cta-band">
     <div class="container">
-      <h2>{services.cta.title}</h2>
-      <a class="btn" href={withBase(services.cta.button_link)}>{services.cta.button_label}</a>
+      <div class="cta-panel">
+        <h2>{services.cta.title}</h2>
+        <a class="btn" href={withBase(services.cta.button_link)}>{services.cta.button_label}</a>
+      </div>
     </div>
   </section>
 
