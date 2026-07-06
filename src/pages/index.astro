@@ -2,6 +2,8 @@
 import Base from '../layouts/Base.astro';
 import home from '../../content/home.json';
 import { withBase } from '../lib/url.js';
+
+const heroWords = home.hero.title.split(' ');
 ---
 <Base title="Home" description={home.hero.subtitle}>
 
@@ -11,7 +13,7 @@ import { withBase } from '../lib/url.js';
         <img src={withBase(home.hero.image)} alt="Enterprise team collaborating" />
         <div class="hero-content">
           <span class="chip">{home.hero.eyebrow}</span>
-          <h1>{home.hero.title}</h1>
+          <h1>{heroWords.map((w, i) => <span class="w" style={`--i:${i}`}>{w + ' '}</span>)}</h1>
           <p class="lead">{home.hero.subtitle}</p>
           <div class="hero-ctas">
             <a class="btn light" href={withBase(home.hero.cta_link)}>{home.hero.cta_label}</a>
@@ -36,34 +38,36 @@ import { withBase } from '../lib/url.js';
     </div>
   </section>
 
-  <section class="section tint">
+  <section class="section">
     <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">{home.services.eyebrow}</p>
-        <h2>{home.services.title}</h2>
-        <p class="lead">{home.services.subtitle}</p>
-      </div>
-      <div class="cards">
-        {home.services.cards.map((card) => (
-          <article class="card reveal">
-            <img src={withBase(card.image)} alt={card.title} loading="lazy" />
-            <div class="card-body">
-              <h3>{card.title}</h3>
-              <p>{card.text}</p>
-            </div>
-          </article>
-        ))}
-      </div>
-      <p class="footnote">{home.services.footnote}</p>
-      <div style="margin-top:36px;">
-        <a class="btn" href={withBase(home.services.cta_link)}>{home.services.cta_label}</a>
+      <div class="panel-dark on-dark zoom-panel">
+        <div class="section-head">
+          <p class="eyebrow">{home.services.eyebrow}</p>
+          <h2>{home.services.title}</h2>
+          <p class="lead">{home.services.subtitle}</p>
+        </div>
+        <div class="cards">
+          {home.services.cards.map((card) => (
+            <article class="card reveal">
+              <img src={withBase(card.image)} alt={card.title} loading="lazy" />
+              <div class="card-body">
+                <h3>{card.title}</h3>
+                <p>{card.text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+        <p class="footnote">{home.services.footnote}</p>
+        <div style="margin-top:36px;">
+          <a class="btn light" href={withBase(home.services.cta_link)}>{home.services.cta_label}</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" style="padding-top:0;">
     <div class="container">
-      <div class="panel-dark on-dark">
+      <div class="panel-tint">
         <p class="eyebrow">{home.why.eyebrow}</p>
         <h2>{home.why.title}</h2>
         <div class="why-grid">
@@ -86,5 +90,31 @@ import { withBase } from '../lib/url.js';
       </div>
     </div>
   </section>
+
+  <script>
+    import { gsap } from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const mm = gsap.matchMedia();
+    mm.add('(prefers-reduced-motion: no-preference)', () => {
+      gsap.fromTo(
+        '.zoom-panel',
+        { scale: 0.88, opacity: 0.75 },
+        {
+          scale: 1,
+          opacity: 1,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '.zoom-panel',
+            start: 'top 92%',
+            end: 'top 38%',
+            scrub: 0.4
+          }
+        }
+      );
+    });
+  </script>
 
 </Base>

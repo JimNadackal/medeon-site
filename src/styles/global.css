@@ -17,7 +17,7 @@
   --teal: #00697b;
   --line: rgba(33, 37, 31, 0.14);
   --line-dark: rgba(246, 245, 240, 0.16);
-  --font-serif: 'Fraunces', Georgia, serif;
+  --font-display: 'Poppins', -apple-system, sans-serif;
   --font-sans: 'Hanken Grotesk', -apple-system, sans-serif;
   --radius: 20px;
   --radius-lg: 28px;
@@ -52,17 +52,19 @@ a { color: inherit; text-decoration: none; }
 h1, h2, h3 { font-weight: 400; }
 
 h1 {
-  font-family: var(--font-serif);
-  font-size: clamp(2.5rem, 5.5vw, 4.25rem);
-  line-height: 1.06;
-  letter-spacing: -0.01em;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2.3rem, 5vw, 3.9rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
 h2 {
-  font-family: var(--font-serif);
-  font-size: clamp(1.9rem, 3.6vw, 2.9rem);
-  line-height: 1.12;
-  letter-spacing: -0.01em;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.8rem, 3.4vw, 2.7rem);
+  line-height: 1.16;
+  letter-spacing: -0.02em;
 }
 
 h3 {
@@ -259,6 +261,22 @@ h4 {
   background: var(--mint);
 }
 
+/* Word-by-word "printed" reveal on the hero headline */
+html.js .hero-content h1 .w {
+  opacity: 0;
+  animation: word-in 0.45s ease forwards;
+  animation-delay: calc(0.25s + var(--i) * 0.07s);
+}
+
+@keyframes word-in {
+  from { opacity: 0.08; filter: blur(3px); }
+  to { opacity: 1; filter: blur(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .hero-content h1 .w { opacity: 1; animation: none; }
+}
+
 /* ---------- Hero (interior pages) ---------- */
 
 .hero {
@@ -283,6 +301,16 @@ h4 {
   border-radius: var(--radius-lg);
   padding: clamp(44px, 6vw, 88px) clamp(24px, 5vw, 72px);
 }
+
+/* Light (sage) inset panel */
+.panel-tint {
+  background: var(--sage);
+  border-radius: var(--radius-lg);
+  padding: clamp(44px, 6vw, 88px) clamp(24px, 5vw, 72px);
+}
+
+/* Scroll-zoom panel (driven by GSAP; transform set from JS) */
+.zoom-panel { transform-origin: 50% 20%; will-change: transform; }
 
 /* ---------- Editorial split (about) ---------- */
 
@@ -324,7 +352,7 @@ h4 {
 
 .card-body { padding: 26px 26px 30px; }
 
-.card-body h3 { font-family: var(--font-serif); font-weight: 500; font-size: 1.45rem; margin-bottom: 10px; }
+.card-body h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.45rem; margin-bottom: 10px; color: var(--ink); }
 
 .card-body p { font-size: 0.98rem; color: var(--slate); }
 
@@ -337,6 +365,8 @@ h4 {
   border-top: 1px solid var(--line);
 }
 
+.on-dark .footnote { color: rgba(246, 245, 240, 0.72); border-top-color: var(--line-dark); }
+
 /* ---------- Why grid (dark panel) ---------- */
 
 .why-grid {
@@ -346,11 +376,15 @@ h4 {
   margin-top: clamp(36px, 5vw, 56px);
 }
 
-.why-item { padding-top: 22px; border-top: 1px solid var(--line-dark); }
+.why-item { padding-top: 22px; border-top: 1px solid var(--line); }
 
-.why-item h3 { font-size: 1.05rem; margin-bottom: 8px; color: var(--cream); }
+.why-item h3 { font-size: 1.05rem; margin-bottom: 8px; color: var(--ink); }
 
-.why-item p { font-size: 0.95rem; color: rgba(246, 245, 240, 0.72); }
+.why-item p { font-size: 0.95rem; color: var(--slate); }
+
+.on-dark .why-item { border-top-color: var(--line-dark); }
+.on-dark .why-item h3 { color: var(--cream); }
+.on-dark .why-item p { color: rgba(246, 245, 240, 0.72); }
 
 /* ---------- Points list ---------- */
 
@@ -396,7 +430,7 @@ h4 {
 }
 
 .stage .num {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: 2.6rem;
   line-height: 1;
   color: var(--teal);
@@ -404,7 +438,7 @@ h4 {
   margin-bottom: 20px;
 }
 
-.stage h3 { font-family: var(--font-serif); font-weight: 500; font-size: 1.5rem; margin-bottom: 16px; }
+.stage h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.5rem; margin-bottom: 16px; }
 
 .stage ul { list-style: none; }
 
@@ -476,7 +510,7 @@ h4 {
   flex-shrink: 0;
 }
 
-.member-head h3 { font-family: var(--font-serif); font-weight: 500; font-size: 1.5rem; }
+.member-head h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.5rem; }
 
 .role {
   display: block;
@@ -515,7 +549,7 @@ h4 {
   padding: 28px 26px;
 }
 
-.office h3 { font-family: var(--font-serif); font-weight: 500; font-size: 1.4rem; margin-bottom: 10px; }
+.office h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.4rem; margin-bottom: 10px; }
 
 .office p { font-size: 0.95rem; color: var(--slate); }
 
@@ -532,7 +566,7 @@ h4 {
 }
 
 .contact-email .email {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: clamp(1.6rem, 3.5vw, 2.6rem);
   color: var(--cream);
 }
