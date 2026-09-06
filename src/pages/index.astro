@@ -31,13 +31,34 @@ const heroWords = home.hero.title.split(' ');
       </div>
       <div class="outcome-frame">
         <iframe
+          id="outcome-iframe"
           src={withBase('/outcome-as-a-service.html')}
           title="Outcome as a Service — animated overview"
           loading="lazy"
+          scrolling="no"
         ></iframe>
       </div>
     </div>
   </section>
+
+  <script>
+    const outcomeIframe = document.getElementById('outcome-iframe');
+    if (outcomeIframe) {
+      const resizeToContent = () => {
+        const doc = outcomeIframe.contentDocument;
+        if (!doc || !doc.documentElement) return;
+        outcomeIframe.style.height = doc.documentElement.scrollHeight + 'px';
+      };
+      outcomeIframe.addEventListener('load', () => {
+        resizeToContent();
+        const doc = outcomeIframe.contentDocument;
+        if (doc && 'ResizeObserver' in window) {
+          new ResizeObserver(resizeToContent).observe(doc.documentElement);
+        }
+        window.addEventListener('resize', resizeToContent);
+      });
+    }
+  </script>
 
   <section class="section">
     <div class="container split">
