@@ -312,6 +312,26 @@ html.js .hero-content h1 .w {
 /* Scroll-zoom panel (driven by GSAP; transform set from JS) */
 .zoom-panel { transform-origin: 50% 20%; will-change: transform; }
 
+/* ---------- Outcome as a Service embed ---------- */
+
+.outcome-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1312 / 1199;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 12px 42px rgba(16, 35, 60, 0.08);
+}
+
+.outcome-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
 /* ---------- Editorial split (about) ---------- */
 
 .split {
